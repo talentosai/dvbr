@@ -1,0 +1,73 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+              <body class="h-full text-base-content">
+                <div id="root" class="bg-[rgb(247,242,242)]">
+
+                    {% include 'header.html' %}
+
+
+    <section id="hero" class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building Bridges, Empowering Communities</h1>
+                <p class="text-xl text-gray-600 mb-8">Promoting Equality, Diversity, and Inclusion in Scotland</p>
+                <button class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg hover:bg-indigo-700 transition-colors shadow-lg">
+                    Donate Now <i class="fa-solid fa-heart ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="mission" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold text-gray-900">Our Mission & Goals</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                    At <b>Diversity Bridge SCIO</b>, we are dedicated to promoting <b>equality</b>, <b>diversity</b>, and
+                    <b>inclusion</b> while providing support and relief to ethnic minorities, including <b>refugees</b> and
+                    <b>asylum seekers</b>. As a Scottish Charitable Incorporated Organization (SCIO), we are
+                    committed to <b>building bridges</b> between communities and fostering positive change.                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <i class="fa-solid fa-check-circle text-indigo-600 text-xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Promotion of Equality and Diversity</h3>
+                                <p class="text-gray-600">Building inclusive communities through understanding and respect</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fa-solid fa-hands-helping text-indigo-600 text-xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Relief of Ethnic Minorities in Need</h3>
+                                <p class="text-gray-600">Supporting vulnerable communities with essential resources</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fa-solid fa-heart text-indigo-600 text-xl mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Prevention or Relief of Poverty</h3>
+                                <p class="text-gray-600">Creating opportunities for economic empowerment</p>
+                            </div>
+                        </div>
+                    </div>   <p class="text-gray-600 leading-relaxed">
+                Through mentorship programs, volunteer opportunities, and community initiatives, we
+                work to empower individuals from diverse backgrounds. We focus on supporting those
+                facing age-related challenges, ill-health, disability, financial hardship, and other forms
+                of social and economic disadvantage.
+                </p>
+                </div>
+                <div class="relative">
+                    <img class="rounded-lg shadow-xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/48a1ac802a-ca7e248b5ea0afc198cb.png" alt="diverse group of people working together in a community center, warm lighting, professional photography style">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+              </body>
+
+{% endblock %}
