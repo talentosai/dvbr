@@ -98,6 +98,6 @@ RUN export PATH="$HOME/.cargo/bin:$PATH"ç
 
 COPY requirements.txt /app/
 RUN pip install --requirement /app/requirements.txt
-COPY --chown=app:app . /app/
+COPY  . /app/
 EXPOSE 3000
 CMD ["python","-u","/app/server.py"]
