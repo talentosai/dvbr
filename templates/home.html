@@ -4,15 +4,40 @@
 {% block content %}
 
 
-              <body class="h-full text-base-content">
+
+
+
+     <body class="h-full text-base-content">
                 <div id="root" class="bg-[rgb(247,242,242)]">
+                                        {% include 'header.html' %}
 
-                    {% include 'header.html' %}
-
-
+    <header id="header" class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-indigo-600 cursor-pointer">Diversity Bridge</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <span class="text-gray-700 hover:text-indigo-600 cursor-pointer">Home</span>
+                    <span class="text-gray-700 hover:text-indigo-600 cursor-pointer">About</span>
+                    <span class="text-gray-700 hover:text-indigo-600 cursor-pointer">Programs</span>
+                    <span class="text-gray-700 hover:text-indigo-600 cursor-pointer">Contact</span>
+                    <button class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors">
+                        Donate Now
+                    </button>
+                </nav>
+                <button class="md:hidden text-gray-700">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
     <section id="hero" class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 to-purple-50">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8">
+                    <img class="w-64 h-64 mx-auto" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/353e78ba52-f35f6cd2bfe0a1eceea8.png" alt="modern minimalist logo design with interlocking bridges forming a heart shape, indigo and purple gradient colors, clean and professional" >
+                </div>
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building Bridges, Empowering Communities</h1>
                 <p class="text-xl text-gray-600 mb-8">Promoting Equality, Diversity, and Inclusion in Scotland</p>
                 <button class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg hover:bg-indigo-700 transition-colors shadow-lg">
@@ -23,14 +48,18 @@
     </section>
     <section id="mission" class="py-20">
         <div class="container mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Welcome to Diversity Bridge SCIO – Building Bridges, Empowering Communities
+                Promoting Equality, Diversity, and Inclusion in Scotland</h2>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
                     <h2 class="text-3xl font-bold text-gray-900">Our Mission & Goals</h2>
                     <p class="text-gray-600 leading-relaxed">
+                    <p class="text-gray-600 leading-relaxed">
                     At <b>Diversity Bridge SCIO</b>, we are dedicated to promoting <b>equality</b>, <b>diversity</b>, and
                     <b>inclusion</b> while providing support and relief to ethnic minorities, including <b>refugees</b> and
                     <b>asylum seekers</b>. As a Scottish Charitable Incorporated Organization (SCIO), we are
-                    committed to <b>building bridges</b> between communities and fostering positive change.                    </p>
+                    committed to <b>building bridges</b> between communities and fostering positive change.
+                    </p>                    </p>
                     <div class="space-y-4">
                         <div class="flex items-start space-x-4">
                             <i class="fa-solid fa-check-circle text-indigo-600 text-xl mt-1"></i>
@@ -53,21 +82,21 @@
                                 <p class="text-gray-600">Creating opportunities for economic empowerment</p>
                             </div>
                         </div>
-                    </div>   <p class="text-gray-600 leading-relaxed">
+                    </div><p class="text-gray-600 leading-relaxed">
                 Through mentorship programs, volunteer opportunities, and community initiatives, we
                 work to empower individuals from diverse backgrounds. We focus on supporting those
                 facing age-related challenges, ill-health, disability, financial hardship, and other forms
                 of social and economic disadvantage.
                 </p>
                 </div>
-                <div class="relative">
+                <div class="relative p-5">
                     <img class="rounded-lg shadow-xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/48a1ac802a-ca7e248b5ea0afc198cb.png" alt="diverse group of people working together in a community center, warm lighting, professional photography style">
                 </div>
-
             </div>
         </div>
     </section>
 </div>
-              </body>
 
 {% endblock %}
+
+
