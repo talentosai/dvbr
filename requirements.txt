@@ -3,3 +3,7 @@ pymongo~=4.10.1
 Flask-Bootstrap~=3.3.7.1
 WTForms~=3.2.1
 certifi~=2024.12.14
+pymongo~=4.10.1
+Bootstrap-Flask==2.4.1
+WTForms==3.2.1
+Flask-WTF==1.2.2
