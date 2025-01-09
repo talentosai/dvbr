@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <body class="h-full text-base-content">
+    <div id="root" class="bg-[rgb(247,242,242)]">
+{% include 'header.html' %}
+        <section id="hero" class="pt-32 pb-10 bg-gradient-to-br from-indigo-50 to-purple-50">
+            <div class="container mx-auto px-4">
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Events </h1>
+            </div>
+        </section>
+        <section id="mission" class="py-20 h-full ">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2  items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-gray-900">{{data['title']}}</h2>
+                        <p class="text-gray-600 leading-relaxed">
+                        {{data['content']}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+
+              </div>
+    </body>
+                {% endblock %}

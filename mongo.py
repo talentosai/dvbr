@@ -49,6 +49,12 @@ class MongoDB:
 
         return result
 
+    def find(self,filter):
+
+        result = self.collection.find(filter)
+
+        return result
+
     def add_to_set(self, filter_set, data):
 
 

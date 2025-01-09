@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body class="h-full text-base-content">
+                <div id="root" class="bg-[rgb(247,242,242)]">
+                       {% include 'header.html' %}
+
+    <section id="hero" class="pt-32 pb-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building Bridges, Empowering Communities</h1>
+                <p class="text-xl text-gray-600 mb-8">Promoting Equality, Diversity, and Inclusion in Scotland</p>
+                <button class="bg-indigo-600 text-white px-8 py-3 rounded-full text-lg hover:bg-indigo-700 transition-colors shadow-lg">
+                    Donate Now <i class="fa-solid fa-heart ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Events</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">Stay informed about our initiatives and community events.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                        {%for event in  events %}
+
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/353e78ba52-f35f6cd2bfe0a1eceea8.png" alt="diverse community event, photography style, warm lighting" >
+
+
+                    </div>
+                    <div class="p-6">
+                        <p class="text-blue-600 text-sm mb-2">March 15, 2025</p>
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">{{ event['title'] }}</h4>
+                        <p class="text-gray-600 mb-4">New initiative to support local communities through educational workshops.</p>
+                        <span  class="text-blue-600 hover:text-blue-700 cursor-pointer"><a href="{{url_for('event', id = event['_id'])}}"> Read More </a><i class="fa-solid fa-arrow-right ml-2"></i></span>
+                    </div>
+                </div>
+
+
+                {%endfor%}
+
+            </div>
+        </div>
+    </section>
+</div>
+              </body>
+{% endblock %}
