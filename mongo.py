@@ -37,8 +37,7 @@ class MongoDB:
     def update_or_insert(self, document, filter):
         set = {'$set':document}
         result = self.collection.update_one(update=set, upsert=True, filter=filter)
-        print(result)
-        print('here')
+
         self.client.close()
         return result
 
@@ -48,6 +47,13 @@ class MongoDB:
         result = self.collection.find_one(filter)
 
         return result
+
+    def delete(self, query):
+
+
+        post = self.collection.delete_one(query)
+
+        return
 
     def find(self,filter):
 

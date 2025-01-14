@@ -10,6 +10,7 @@ from stytch import Client
 from stytch.core.response_base import StytchError
 from auth import Auth
 
+
 app = Flask(__name__)
 app.secret_key = env.get('app_secret')
 bootstrap = Bootstrap5(app)
@@ -57,7 +58,7 @@ def authenticate() -> str:
     return e.details.original_json
 
   session['stytch_session_token'] = resp.session_token
-  return f"Hello {resp.user.emails[0].email}"
+  return redirect(url_for('internal_articles'))
 
 @app.route('/internal/articles', methods=["GET"])
 def internal_articles() -> str:
@@ -70,35 +71,89 @@ def internal_articles() -> str:
   ev = MongoDB('events')
   events = ev.find(filter=filter_d).to_list()
 
-  print('the list of articles: ', list)
   if not user:
-    return "Log in to view this page."
+    return redirect(url_for('internal_articles'))
 
   return render_template('internal_blogs_list.html',articles=list, events=events)
 
+@app.route('/post/delete', methods=['GET'])
+def delete_post() -> str:
+    post_id = request.args.get("post_id", None)
+    query = {'_id':ObjectId(post_id)}
+    mn = MongoDB('posts')
+    mn.delete(query)
+    return redirect(url_for('internal_articles'))
 
-@app.route('/post/create', methods=['POST','GET'])
-def create_post():
+@app.route('/event/delete', methods=['GET'])
+def delete_event() -> str:
+    event_id = request.args.get("event_id", None)
+    query = {'_id':ObjectId(event_id)}
+    mn = MongoDB('events')
+    mn.delete(query)
+    return redirect(url_for('internal_articles'))
+
+
+
+@app.route('/event/edit', methods=['POST','GET'])
+def edit_event():
     use = Auth()
     user = use.get_authenticated_user()
-
+    event_id = request.args.get('event_id')
     if not user:
         return url_for('login')
-
 
     if request.method == 'POST':
 
         data = request.form.to_dict()
-        mn =  MongoDB('posts')
-        mn.insert_one(data)
+        query = {'_id':ObjectId(event_id)}
+        mn = MongoDB('events')
+        mn.update_or_insert(document=data,filter=query)
 
-        print(data)
 
     else:
 
-        form = forms.NewNewsArticleForm()
+        query = {'_id':ObjectId(event_id)}
+        mn = MongoDB('events')
+        event_data =  mn.find(query).to_list()
+        form = forms.NewNewsArticleForm(obj=event_data[0])
+        form.title.data = event_data[0]['title']
+        form.content.data = event_data[0]['content']
 
-        return render_template('article_create.html', form = form)
+        return render_template('event_create.html', form = form, post_data = event_data[0], event_id= event_id)
+
+
+
+
+    return redirect(url_for('internal_articles'))
+
+
+
+@app.route('/post/edit', methods=['POST','GET'])
+def edit_post():
+    use = Auth()
+    user = use.get_authenticated_user()
+    post_id = request.args.get('post_id')
+    if not user:
+        return url_for('login')
+
+    if request.method == 'POST':
+
+        data = request.form.to_dict()
+        query = {'_id':ObjectId(post_id)}
+        mn = MongoDB('posts')
+        mn.update_or_insert(document=data,filter=query)
+
+
+    else:
+
+        query = {'_id':ObjectId(post_id)}
+        mn = MongoDB('posts')
+        post_data =  mn.find(query).to_list()
+        form = forms.NewNewsArticleForm(obj=post_data[0])
+        form.title.data = post_data[0]['title']
+        form.content.data = post_data[0]['content']
+
+        return render_template('article_create.html', form = form, post_data = post_data[0], post_id= post_id)
 
 
 

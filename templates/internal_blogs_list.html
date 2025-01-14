@@ -23,16 +23,15 @@
         <tr>
             <td><a href="{{url_for('article', id = article['_id'])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> {{ article['_id'] }}</a></td>
             <td>{{ article['title'] }}</td>
-            <td><button>Edit</button></td>
-            <td><button>Delete</button></td>
-        </tr>
+            <td><button><a href="{{url_for('edit_post', post_id = article['_id'])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a></button></td>
+            <td><button><a href="{{url_for('delete_post',post_id = article['_id'])}}" class="font-medium text-rose-600 hover:underline">Delete</a>
 
         {%endfor%}
         </tbody>
     </table>
 
 
-<h1>Articles</h1>
+<h1>Events</h1>
     <table class="border-separate border-collapse border-spacing-10 border border-slate-500">
         <thead>
         <tr>
@@ -48,8 +47,10 @@
         <tr>
             <td><a href="{{url_for('event', id = event['_id'])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"> {{ event['_id'] }}</a></td>
             <td>{{ event['title'] }}</td>
-            <td><button>Edit</button></td>
-            <td><button>Delete</button></td>
+
+             <td><button><a href="{{url_for('edit_event', event_id = event['_id'])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a></button></td>
+            <td><button><a href="{{url_for('delete_event',event_id = event['_id'])}}" class="font-medium text-rose-600 hover:underline">Delete</a></button></td>
+
         </tr>
 
         {%endfor%}
