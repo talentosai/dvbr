@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+
+
+    @font-face{
+    font-family: 'beba';
+    src:local('beba'), url("{{url_for('static', filename='bebasneuecyrillic.ttf') }}");
+      font-weight: normal;
+      font-style: normal;
+    }
+@tailwind utilities;

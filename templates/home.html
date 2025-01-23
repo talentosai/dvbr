@@ -1,96 +1,16 @@
-
 {% extends 'base.html' %}
 
 {% block content %}
+<div id="root" class="bg-[rgb(247,242,242)]">
+    {% include 'header.html' %}
+    
+    <main id="main">
+        {% include 'components/hero.html' %}
+        {% include 'components/mission.html' %}
+    </main>
 
-
-
-
-
-     <body class="h-full text-base-content">
-                <div id="root" class="bg-[rgb(247,242,242)]">
-                                        {% include 'header.html' %}
-
-                          {% include 'header.html' %}
-
-
-                     <main id="main"   >
-        <section id="hero" class="relative h-[800px] flex items-center">
-            <div class="absolute inset-0 z-0">
-                <img loading="lazy" class="w-full h-full object-cover" src="https://storage.googleapis.com/dvbr_images/D4.jpg" />
-                <div class="absolute inset-0 bg-gradient-to-r from-black to-red-700/70"></div>
-            </div>
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-8">
-                        <h1 class="text-5xl font-bold text-white">Building Bridges, Breaking Barriers - A New Vision for Scotland</h1>
-                        <div class="flex space-x-4">
-                            <button class="bg-white text-indigo-600 px-8 py-4 rounded-lg hover:bg-gray-100">Donate</button>
-                            <button class="border border-white text-white px-8 py-4 rounded-lg hover:bg-white/10">Volunteer</button>
-                        </div>
-                    </div>
-                    <div class="relative mt-4">
-                        <img loading="lazy" class="rounded-2xl shadow-2xl"  />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-    <section id="mission" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Welcome to Diversity Bridge SCIO – Building Bridges, Empowering Communities
-                Promoting Equality, Diversity, and Inclusion in Scotland</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-bold text-gray-900">Our Mission & Goals</h2>
-                    <p class="text-gray-600 leading-relaxed">
-                    <p class="text-gray-600 leading-relaxed">
-                    At <b>Diversity Bridge SCIO</b>, we are dedicated to promoting <b>equality</b>, <b>diversity</b>, and
-                    <b>inclusion</b> while providing support and relief to ethnic minorities, including <b>refugees</b> and
-                    <b>asylum seekers</b>. As a Scottish Charitable Incorporated Organization (SCIO), we are
-                    committed to <b>building bridges</b> between communities and fostering positive change.
-                    </p>                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-4">
-                            <i class="fa-solid fa-check-circle text-red-700 text-xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Promotion of Equality and Diversity</h3>
-                                <p class="text-gray-600">Building inclusive communities through understanding and respect</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i class="fa-solid fa-hands-helping text-red-700 text-xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Relief of Ethnic Minorities in Need</h3>
-                                <p class="text-gray-600">Supporting vulnerable communities with essential resources</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i class="fa-solid fa-heart text-red-700 text-xl mt-1"></i>
-                            <div>
-                                <h3 class="font-semibold text-gray-900">Prevention or Relief of Poverty</h3>
-                                <p class="text-gray-600">Creating opportunities for economic empowerment</p>
-                            </div>
-                        </div>
-                    </div><p class="text-gray-600 leading-relaxed">
-                Through mentorship programs, volunteer opportunities, and community initiatives, we
-                work to empower individuals from diverse backgrounds. We focus on supporting those
-                facing age-related challenges, ill-health, disability, financial hardship, and other forms
-                of social and economic disadvantage.
-                </p>
-                </div>
-                <div class="relative p-5">
-                    <img class="rounded-lg shadow-xl" src="https://storage.googleapis.com/dvbr_images/D22.jpg" alt="diverse group of people working together in a community center, warm lighting, professional photography style">
-                </div>
-            </div>
-        </div>
-    </section>
+    {% include 'components/footer.html' %}
 </div>
-
 {% endblock %}
 
 

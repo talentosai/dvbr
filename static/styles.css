@@ -1,0 +1,8 @@
+
+
+@layer base {
+    @font-face{
+    font-family: beba;
+    src:url("{{url_for('static', filename='bebasneuecyrillic.ttf') }}") format('ttf');
+    font-weight: bold;}
+}
