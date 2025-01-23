@@ -90,8 +90,6 @@ RUN set -eux; \
 		ln -svT "$src" "/usr/local/bin/$dst"; \
 	done
 
-CMD ["python3"]
-
 RUN python -m pip install --upgrade pip
 
 RUN export PATH="$HOME/.cargo/bin:$PATH"ç
@@ -100,4 +98,4 @@ COPY requirements.txt /app/
 RUN pip install --requirement /app/requirements.txt
 COPY  . /app/
 EXPOSE 3000
-CMD ["python","-u","/app/server.py"]
+CMD ["python","-u","/app/app.py"]
