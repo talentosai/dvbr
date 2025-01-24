@@ -95,7 +95,7 @@ RUN python -m pip install --upgrade pip
 RUN export PATH="$HOME/.cargo/bin:$PATH"ç
 
 COPY requirements.txt /app/
-RUN pip install --requirement /app/requirements.txt
 COPY  . /app/
+RUN pip install --requirement /app/requirements.txt
 EXPOSE 3000
 CMD ["python","-u","/app/app.py"]
