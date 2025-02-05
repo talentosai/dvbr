@@ -1,0 +1,4 @@
+
+
+
+gcloud artifacts repositories create diversitybridge --repository-format=docker \

@@ -1,0 +1,16 @@
+services:
+  diversity-bridge:
+    image: div-br:latest
+    build:
+      context: .
+    container_name: divbr
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 8092:8090
+    volumes:
+      - type: bind
+        source: ./app/diversity-bridge-447208-8a0d62007dec.json
+        target: /app/diversity-bridge-447208-8a0d62007dec.json
+
